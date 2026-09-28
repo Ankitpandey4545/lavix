@@ -52,7 +52,7 @@ export default function Navbar() {
               href="/contact"
               className="relative px-4 md:px-5 py-2 rounded-full text-xs md:text-sm font-semibold text-white overflow-hidden group bg-gradient-to-r from-indigo-600 to-purple-600 shadow-lg shadow-indigo-500/30 hover:shadow-xl hover:shadow-purple-500/50 transition-all duration-300 hover:-translate-y-0.5"
             >
-              <span className="relative z-10">Let&apos;s Talk</span>
+              <span className="relative z-10">Contact Us </span>
               <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/30 to-transparent" />
             </Link>
 
@@ -134,7 +134,7 @@ export default function Navbar() {
                   onClick={() => setMobileOpen(false)}
                   className="block mt-6 py-3.5 text-center rounded-full text-white font-semibold bg-gradient-to-r from-indigo-600 to-purple-600 shadow-lg shadow-indigo-500/30"
                 >
-                  Let&apos;s Talk →
+                   Contact Us
                 </Link>
               </motion.div>
 

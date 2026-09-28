@@ -26,8 +26,7 @@ const footerLinks = {
     { name: "Terms of Service", href: "/terms" },
   ],
 };
-
-// Real brand icons from react-icons
+ 
 const socialLinks = [
   { icon: FaLinkedin, href: "https://linkedin.com", label: "LinkedIn", color: "hover:bg-[#0A66C2]" },
   { icon: FaTwitter, href: "https://twitter.com", label: "Twitter", color: "hover:bg-[#1DA1F2]" },
@@ -149,8 +148,7 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-
-          {/* Column 4: Contact */}
+ 
           <div>
             <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4">
               Get in Touch
@@ -164,24 +162,24 @@ export default function Footer() {
                              flex items-center gap-2"
                 >
                   <Mail size={14} className="text-indigo-400 flex-shrink-0" />
-                  hello@lavixtech.com
+                   lavixtech1@gmail.com
                 </a>
               </li>
               <li>
                 <a
-                  href="tel:+919999999999"
+                  href="tel:+918787054829"
                   className="text-sm text-slate-400 hover:text-white 
                              transition-colors duration-300 
                              flex items-center gap-2"
                 >
                   <Phone size={14} className="text-indigo-400 flex-shrink-0" />
-                  +91 99999 99999
+                  +91 8787054829
                 </a>
               </li>
               <li>
                 <div className="text-sm text-slate-400 flex items-start gap-2">
                   <MapPin size={14} className="text-indigo-400 mt-0.5 flex-shrink-0" />
-                  <span>Mumbai, India</span>
+                  <span>Delhi India</span>
                 </div>
               </li>
             </ul>
