@@ -28,7 +28,7 @@ export default function ContactPage() {
 
   const [submitted, setSubmitted] = useState(false);
 
-  // Load Calendly script
+ 
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://assets.calendly.com/assets/external/widget.js";
@@ -63,8 +63,7 @@ export default function ContactPage() {
       <div className="absolute bottom-1/4 -right-40 w-96 h-96 bg-purple-600/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        
-        {/* ============ HERO SECTION ============ */}
+         
         <section className="text-center mb-16">
           
           <motion.div
@@ -101,11 +100,9 @@ export default function ContactPage() {
             call — we&apos;ll get back to you within 24 hours.
           </motion.p>
         </section>
-
-        {/* ============ MAIN CONTENT ============ */}
+ 
         <div className="grid lg:grid-cols-5 gap-8 mb-20">
-          
-          {/* ============ LEFT - FORM ============ */}
+      
           <motion.div
             initial={false}
             animate={{ opacity: 1, x: 0 }}

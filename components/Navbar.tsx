@@ -8,7 +8,7 @@ import { Menu } from "lucide-react";
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Services", href: "/services" },
-  { name: "Technologies", href: "/technologies" },
+  { name: "Pricing", href: "/pricing" },
   { name: "Portfolio", href: "/portfolio" },
   { name: "About", href: "/about" },
 ];
@@ -47,16 +47,16 @@ export default function Navbar() {
           {/* Right Side: CTA + Hamburger */}
           <div className="flex items-center gap-3">
             
-            {/* Let's Talk Button (visible on all sizes) */}
+            {/* Contact Us Button */}
             <Link
               href="/contact"
               className="relative px-4 md:px-5 py-2 rounded-full text-xs md:text-sm font-semibold text-white overflow-hidden group bg-gradient-to-r from-indigo-600 to-purple-600 shadow-lg shadow-indigo-500/30 hover:shadow-xl hover:shadow-purple-500/50 transition-all duration-300 hover:-translate-y-0.5"
             >
-              <span className="relative z-10">Contact Us </span>
+              <span className="relative z-10">Contact Us</span>
               <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/30 to-transparent" />
             </Link>
 
-            {/* Hamburger Menu (visible on mobile/tablet only) */}
+            {/* Hamburger */}
             <button
               onClick={() => setMobileOpen(true)}
               className="md:hidden p-2 text-white hover:bg-white/5 rounded-lg transition-colors"
@@ -134,7 +134,7 @@ export default function Navbar() {
                   onClick={() => setMobileOpen(false)}
                   className="block mt-6 py-3.5 text-center rounded-full text-white font-semibold bg-gradient-to-r from-indigo-600 to-purple-600 shadow-lg shadow-indigo-500/30"
                 >
-                   Contact Us
+                  Contact Us
                 </Link>
               </motion.div>
 
@@ -146,16 +146,16 @@ export default function Navbar() {
                 className="mt-8 pt-6 border-t border-white/10 space-y-3"
               >
                 <a
-                  href="mailto:hello@lavixtech.com"
-                  className="block text-sm text-slate-400 hover:text-white transition-colors"
+                  href="mailto:ankitpandey.ap8787@gmail.com"
+                  className="block text-sm text-slate-400 hover:text-white transition-colors break-all"
                 >
-                  📧 hello@lavixtech.com
+                  📧 ankitpandey.ap8787@gmail.com
                 </a>
                 <a
-                  href="tel:+919999999999"
+                  href="tel:+918787054829"
                   className="block text-sm text-slate-400 hover:text-white transition-colors"
                 >
-                  📞 +91 99999 99999
+                  📞 +91 8787054829
                 </a>
               </motion.div>
             </div>
