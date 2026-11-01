@@ -1,201 +1,109 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Phone, Check, Sparkles } from "lucide-react";
+import { ArrowRight, CalendarDays, Check, MessageSquareText, Sparkles } from "lucide-react";
+
+const trustPoints = [
+  "No pressure strategy call",
+  "Fast response time",
+  "Clear project roadmap",
+];
+
+const quickInfo = [
+  {
+    title: "Free discovery call",
+    text: "Tell us what you need and we’ll map the right solution.",
+    icon: CalendarDays,
+  },
+  {
+    title: "Practical guidance",
+    text: "We help you reduce friction and move faster with less confusion.",
+    icon: MessageSquareText,
+  },
+  {
+    title: "No commitment",
+    text: "A straightforward conversation with zero sales pressure.",
+    icon: Check,
+  },
+];
 
 export default function CTASection() {
   return (
-    <section className="relative py-24 px-6 overflow-hidden">
-      
-      {/* Background Glow */}
-      <div className="absolute top-1/2 -left-40 w-96 h-96 bg-indigo-600/20 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute top-1/2 -right-40 w-96 h-96 bg-purple-600/20 rounded-full blur-[120px] pointer-events-none" />
+    <section className="relative overflow-hidden bg-slate-50 px-6 py-24">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(99,102,241,0.08),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(168,85,247,0.08),_transparent_35%)]" />
 
-      <div className="max-w-6xl mx-auto relative z-10">
-        
-        {/* Main CTA Card */}
+      <div className="relative z-10 mx-auto max-w-6xl">
         <motion.div
-          initial={false}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
-          className="relative rounded-3xl overflow-hidden 
-                     bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 
-                     p-1 shadow-2xl shadow-purple-500/30"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6 }}
+          className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-1 shadow-[0_30px_80px_rgba(15,23,42,0.08)]"
         >
-          {/* Inner Card */}
-          <div className="relative rounded-[22px] bg-slate-950/90 backdrop-blur-xl 
-                          px-8 py-16 md:px-16 md:py-20 overflow-hidden">
-            
-            {/* Decorative Grid Pattern */}
-            <div
-              className="absolute inset-0 opacity-[0.03]"
-              style={{
-                backgroundImage:
-                  "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
-                backgroundSize: "40px 40px",
-              }}
-            />
-
-            {/* Decorative Blur Circles */}
-            <div className="absolute -top-20 -right-20 w-64 h-64 
-                            bg-purple-600/30 rounded-full blur-[80px]" />
-            <div className="absolute -bottom-20 -left-20 w-64 h-64 
-                            bg-indigo-600/30 rounded-full blur-[80px]" />
-
-            {/* Content */}
-            <div className="relative z-10 text-center max-w-3xl mx-auto">
-              
-              {/* Badge */}
-              <motion.div
-                initial={false}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full 
-                           bg-white/10 border border-white/20 mb-6 backdrop-blur-sm"
-              >
-                <Sparkles size={14} className="text-yellow-400" />
-                <span className="text-xs text-white font-semibold uppercase tracking-wider">
-                  Let&apos;s Work Together
-                </span>
-              </motion.div>
-
-              {/* Heading */}
-              <motion.h2
-                initial={false}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-3xl md:text-5xl lg:text-6xl font-bold text-white 
-                           mb-6 leading-tight tracking-tight"
-              >
-                Ready to Build{" "}
-                <span className="gradient-text">Something Amazing?</span>
-              </motion.h2>
-
-              {/* Subtext */}
-              <motion.p
-                initial={false}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="text-slate-300 text-base md:text-lg mb-10 max-w-2xl mx-auto leading-relaxed"
-              >
-                Let&apos;s discuss your project and bring your ideas to life. Get a
-                free consultation with our experts — no commitment required.
-              </motion.p>
-
-              {/* Buttons */}
-              <motion.div
-                initial={false}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="flex flex-wrap items-center justify-center gap-4 mb-10"
-              >
-                {/* Primary Button */}
-                <a href="/contact">
-                  <motion.button
-                    whileHover={{ y: -3, scale: 1.03 }}
-                    whileTap={{ scale: 0.97 }}
-                    transition={{ duration: 0.3, ease: [0.25, 1, 0.5, 1] }}
-                    className="relative px-8 py-4 rounded-full text-slate-900 
-                               font-bold overflow-hidden group
-                               bg-white hover:bg-slate-100
-                               shadow-lg shadow-black/20 
-                               hover:shadow-xl hover:shadow-black/30 
-                               transition-all duration-300"
-                  >
-                    <span className="relative z-10 flex items-center gap-2">
-                      Start Your Project
-                      <ArrowRight
-                        size={18}
-                        className="transition-transform duration-300 
-                                   group-hover:translate-x-1"
-                      />
-                    </span>
-                  </motion.button>
-                </a>
-
-                {/* Secondary Button */}
-                <a href="/contact">
-                  <motion.button
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.97 }}
-                    className="flex items-center gap-2 px-7 py-4 rounded-full 
-                               text-white font-semibold 
-                               border-2 border-white/20 
-                               hover:bg-white/10 hover:border-white/40 
-                               transition-all duration-300 group"
-                  >
-                    <Phone size={16} />
-                    Book a Free Call
-                  </motion.button>
-                </a>
-              </motion.div>
-
-              {/* Trust Points */}
-              <motion.div
-                initial={false}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 
-                           pt-8 border-t border-white/10"
-              >
-                {[
-                  "No commitment",
-                  "Free consultation",
-                  "24hr response time",
-                ].map((point, i) => (
-                  <div key={i} className="flex items-center gap-2">
-                    <div className="w-5 h-5 rounded-full bg-green-500/20 
-                                    flex items-center justify-center">
-                      <Check size={12} className="text-green-400" />
-                    </div>
-                    <span className="text-sm text-slate-300">{point}</span>
-                  </div>
-                ))}
-              </motion.div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Bottom Info Row */}
-        <motion.div
-          initial={false}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10"
-        >
-          {[
-            {
-              title: "Quick Response",
-              text: "We reply within 24 hours",
-              icon: "⚡",
-            },
-            {
-              title: "Free Consultation",
-              text: "30-min discovery call — free",
-              icon: "🎯",
-            },
-            {
-              title: "No Obligation",
-              text: "Zero commitment required",
-              icon: "✨",
-            },
-          ].map((item, idx) => (
-            <div
-              key={idx}
-              className="flex items-start gap-4 p-5 rounded-2xl 
-                         bg-slate-900/50 border border-white/10 
-                         backdrop-blur-sm hover:border-white/20 
-                         transition-colors duration-300"
-            >
-              <div className="text-2xl">{item.icon}</div>
+          <div className="rounded-[1.75rem] bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 p-8 md:p-12">
+            <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
               <div>
-                <p className="text-sm font-bold text-white mb-1">
-                  {item.title}
+                <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-violet-400/30 bg-violet-500/10 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-violet-100 shadow-sm shadow-violet-500/10">
+                  <Sparkles size={12} className="text-violet-300" />
+                  Let&apos;s get together
+                </div>
+
+                <h2 className="max-w-xl text-3xl font-bold leading-tight text-white md:text-5xl">
+                  Ready to build what&apos;s next for your business?
+                </h2>
+
+                <p className="mt-5 max-w-xl text-base leading-7 text-slate-200 md:text-lg">
+                  Let&apos;s talk about your website, app, automation, or digital growth goals. We&apos;ll help you map the right solution with zero pressure and clear direction.
                 </p>
-                <p className="text-xs text-slate-400">{item.text}</p>
+
+                <div className="mt-8 flex flex-wrap gap-4">
+                  <a
+                    href="/contact"
+                    className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-indigo-500 to-violet-500 px-6 py-3 font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-violet-500/40"
+                  >
+                    Book a strategy call
+                    <ArrowRight size={18} />
+                  </a>
+                  <a
+                    href="/contact"
+                    className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3 font-semibold text-white transition hover:bg-white/10"
+                  >
+                    Share your project
+                  </a>
+                </div>
+
+                <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
+                  {trustPoints.map((point) => (
+                    <div key={point} className="flex items-center gap-2 text-sm text-slate-200">
+                      <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-400/20 text-emerald-300">
+                        <Check size={12} />
+                      </div>
+                      {point}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="rounded-[1.5rem] border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
+                <div className="rounded-[1.25rem] bg-slate-950/80 p-5">
+                  <p className="text-xs uppercase tracking-[0.18em] text-slate-400">What happens next</p>
+                  <div className="mt-6 space-y-4">
+                    {quickInfo.map(({ title, text, icon: Icon }) => (
+                      <div key={title} className="flex gap-3 rounded-2xl border border-white/10 bg-white/5 p-3">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-indigo-500/15 text-indigo-300">
+                          <Icon size={18} />
+                        </div>
+                        <div>
+                          <p className="font-semibold text-white">{title}</p>
+                          <p className="mt-1 text-sm leading-6 text-slate-300">{text}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
-          ))}
+          </div>
         </motion.div>
       </div>
     </section>

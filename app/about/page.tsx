@@ -15,9 +15,7 @@ import {
   ArrowRight,
   ArrowUpRight,
   Check,
-  Mail,
 } from "lucide-react";
-import { FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const stats = [
   { number: "50+", label: "Projects Delivered" },
@@ -58,41 +56,6 @@ const values = [
       "We love what we do. That passion reflects in every project we deliver and every relationship we build.",
     bgColor: "bg-orange-500/10",
     iconColor: "text-orange-400",
-  },
-];
-
-const team = [
-  {
-    name: "Ankit Pandey",
-    role: "Founder & CEO",
-    image:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80",
-    bio: "Full-stack developer with 5+ years of experience building scalable web applications.",
-    social: { linkedin: "#", twitter: "#", email: "ankit@lavixtech.com" },
-  },
-  {
-    name: "Priya Sharma",
-    role: "Lead Designer",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80",
-    bio: "UI/UX designer creating beautiful, user-centric interfaces that convert.",
-    social: { linkedin: "#", twitter: "#", email: "priya@lavixtech.com" },
-  },
-  {
-    name: "Rahul Verma",
-    role: "AI Engineer",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
-    bio: "AI/ML specialist building intelligent automation solutions for businesses.",
-    social: { linkedin: "#", twitter: "#", email: "rahul@lavixtech.com" },
-  },
-  {
-    name: "Sneha Reddy",
-    role: "Project Manager",
-    image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80",
-    bio: "Ensuring every project is delivered on time with clear communication.",
-    social: { linkedin: "#", twitter: "#", email: "sneha@lavixtech.com" },
   },
 ];
 
@@ -459,92 +422,6 @@ export default function AboutPage() {
                 </motion.div>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* ============ TEAM SECTION ============ */}
-        <section className="mb-24">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-              Meet Our <span className="gradient-text">Team</span>
-            </h2>
-            <p className="text-slate-400">
-              The people behind LavixTech
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {team.map((member, idx) => (
-              <motion.div
-                key={idx}
-                initial={false}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 * idx }}
-                whileHover={{ y: -6 }}
-                className="group rounded-2xl overflow-hidden 
-                           bg-slate-900/50 backdrop-blur-sm 
-                           border border-white/10 hover:border-white/20 
-                           hover:shadow-2xl hover:shadow-purple-500/20 
-                           transition-all duration-500"
-              >
-                <div className="relative h-64 overflow-hidden">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover group-hover:scale-110 
-                               transition-transform duration-700"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t 
-                                  from-black/90 via-black/40 to-transparent 
-                                  opacity-0 group-hover:opacity-100 
-                                  transition-opacity duration-300 
-                                  flex items-end justify-center 
-                                  pb-6 gap-3">
-                    <a
-                      href={member.social.linkedin}
-                      className="w-9 h-9 rounded-full bg-white/20 
-                                 backdrop-blur-md border border-white/30 
-                                 flex items-center justify-center 
-                                 hover:bg-[#0A66C2] transition-colors"
-                    >
-                      <FaLinkedin size={16} className="text-white" />
-                    </a>
-                    <a
-                      href={member.social.twitter}
-                      className="w-9 h-9 rounded-full bg-white/20 
-                                 backdrop-blur-md border border-white/30 
-                                 flex items-center justify-center 
-                                 hover:bg-[#1DA1F2] transition-colors"
-                    >
-                      <FaTwitter size={16} className="text-white" />
-                    </a>
-                    <a
-                      href={`mailto:${member.social.email}`}
-                      className="w-9 h-9 rounded-full bg-white/20 
-                                 backdrop-blur-md border border-white/30 
-                                 flex items-center justify-center 
-                                 hover:bg-purple-600 transition-colors"
-                    >
-                      <Mail size={16} className="text-white" />
-                    </a>
-                  </div>
-                </div>
-
-                <div className="p-5">
-                  <h3 className="text-lg font-bold text-white mb-1">
-                    {member.name}
-                  </h3>
-                  <p className="text-xs font-semibold text-indigo-400 mb-3">
-                    {member.role}
-                  </p>
-                  <p className="text-xs text-slate-400 leading-relaxed">
-                    {member.bio}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
           </div>
         </section>
 

@@ -37,7 +37,7 @@ export default function LoadingScreen() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
-          className="fixed inset-0 z-[9999] bg-slate-950 
+          className="fixed inset-0 z-[9999] bg-white 
                      flex items-center justify-center overflow-hidden"
         >
           {/* ===== Background Glow Effects ===== */}

@@ -18,13 +18,13 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full bg-slate-950/80 backdrop-blur-xl border-b border-white/10 py-4 z-50">
+      <nav className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-xl border-b border-slate-200 py-4 z-50">
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
             <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-lg transition-transform duration-300 group-hover:scale-110" />
-            <span className="text-xl font-bold text-white transition-colors duration-300 group-hover:text-purple-400">
+            <span className="text-xl font-bold text-slate-900 transition-colors duration-300 group-hover:text-purple-600">
               Lavix<span className="gradient-text">Tech</span>
             </span>
           </Link>
@@ -35,7 +35,7 @@ export default function Navbar() {
               <li key={link.name}>
                 <Link
                   href={link.href}
-                  className="relative text-sm font-medium text-slate-300 hover:text-white transition-colors duration-300 py-2 group inline-block"
+                  className="relative text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors duration-300 py-2 group inline-block"
                 >
                   {link.name}
                   <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-indigo-500 to-purple-500 group-hover:w-full transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] rounded-full" />
@@ -59,7 +59,7 @@ export default function Navbar() {
             {/* Hamburger */}
             <button
               onClick={() => setMobileOpen(true)}
-              className="md:hidden p-2 text-white hover:bg-white/5 rounded-lg transition-colors"
+              className="md:hidden p-2 text-slate-700 hover:bg-slate-100 rounded-lg transition-colors"
               aria-label="Open menu"
             >
               <Menu size={24} />
@@ -76,16 +76,16 @@ export default function Navbar() {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
-            className="fixed inset-0 z-[100] bg-slate-950 md:hidden overflow-y-auto"
+            className="fixed inset-0 z-[100] bg-white md:hidden overflow-y-auto"
           >
             {/* Header */}
-            <div className="flex justify-between items-center p-6 border-b border-white/10">
-              <span className="text-xl font-bold text-white">
+            <div className="flex justify-between items-center p-6 border-b border-slate-200">
+              <span className="text-xl font-bold text-slate-900">
                 Lavix<span className="gradient-text">Tech</span>
               </span>
               <button
                 onClick={() => setMobileOpen(false)}
-                className="p-2 text-white hover:bg-white/5 rounded-lg transition-colors"
+                className="p-2 text-slate-700 hover:bg-slate-100 rounded-lg transition-colors"
                 aria-label="Close menu"
               >
                 <svg
@@ -116,7 +116,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className="block py-4 text-lg font-medium text-white border-b border-white/10 hover:text-purple-400 transition-colors"
+                    className="block py-4 text-lg font-medium text-slate-800 border-b border-slate-200 hover:text-purple-600 transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -143,17 +143,17 @@ export default function Navbar() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.3 }}
-                className="mt-8 pt-6 border-t border-white/10 space-y-3"
+                className="mt-8 pt-6 border-t border-slate-200 space-y-3"
               >
                 <a
                   href="mailto:ankitpandey.ap8787@gmail.com"
-                  className="block text-sm text-slate-400 hover:text-white transition-colors break-all"
+                  className="block text-sm text-slate-600 hover:text-slate-900 transition-colors break-all"
                 >
                   📧 ankitpandey.ap8787@gmail.com
                 </a>
                 <a
                   href="tel:+918787054829"
-                  className="block text-sm text-slate-400 hover:text-white transition-colors"
+                  className="block text-sm text-slate-600 hover:text-slate-900 transition-colors"
                 >
                   📞 +91 8787054829
                 </a>

@@ -26,42 +26,47 @@ const footerLinks = {
     { name: "Terms of Service", href: "/terms" },
   ],
 };
- 
+
 const socialLinks = [
   { icon: FaLinkedin, href: "https://linkedin.com", label: "LinkedIn", color: "hover:bg-[#0A66C2]" },
   { icon: FaTwitter, href: "https://twitter.com", label: "Twitter", color: "hover:bg-[#1DA1F2]" },
   { icon: FaGithub, href: "https://github.com", label: "Github", color: "hover:bg-[#333]" },
-  { icon: FaInstagram, href: "https://instagram.com", label: "Instagram", color: "hover:bg-gradient-to-br hover:from-[#833AB4] hover:via-[#FD1D1D] hover:to-[#FCB045]" },
+  {
+    icon: FaInstagram,
+    href: "https://www.instagram.com/lavixtech.in/?hl=en",
+    label: "Instagram",
+    color: "hover:bg-gradient-to-br hover:from-[#833AB4] hover:via-[#FD1D1D] hover:to-[#FCB045]",
+  },
 ];
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-white/10 bg-slate-950/50 overflow-hidden">
-      
+    <footer className="relative border-t border-slate-200 bg-white/80 overflow-hidden">
+
       {/* Background Glow */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-indigo-600/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-600/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 pt-16 pb-8 relative z-10">
-        
+
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
-          
+
           {/* Column 1: Logo + Description + Social */}
           <div className="lg:col-span-2">
-            
+
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 mb-4 group">
               <div className="w-9 h-9 bg-gradient-to-br from-indigo-500 to-purple-500 
                               rounded-lg transition-transform duration-300 
                               group-hover:scale-110" />
-              <span className="text-xl font-bold text-white">
+              <span className="text-xl font-bold text-slate-900">
                 Lavix<span className="gradient-text">Tech</span>
               </span>
             </Link>
 
             {/* Description */}
-            <p className="text-sm text-slate-400 leading-relaxed mb-6 max-w-sm">
+            <p className="text-sm text-slate-600 leading-relaxed mb-6 max-w-sm">
               We build modern web, mobile, AI and CRM solutions that help
               businesses grow, automate and stay ahead of the competition.
             </p>
@@ -80,12 +85,12 @@ export default function Footer() {
                     whileHover={{ y: -3, scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     transition={{ duration: 0.3 }}
-                    className={`w-10 h-10 rounded-full bg-white/5 
-                               border border-white/10 
+                    className={`w-10 h-10 rounded-full bg-slate-100 
+                               border border-slate-200 
                                ${social.color}
                                hover:border-transparent
                                flex items-center justify-center 
-                               text-slate-400 hover:text-white 
+                               text-slate-600 hover:text-white 
                                transition-colors duration-300`}
                   >
                     <Icon size={16} />
@@ -97,7 +102,7 @@ export default function Footer() {
 
           {/* Column 2: Services */}
           <div>
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4">
+            <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">
               Services
             </h4>
             <ul className="space-y-3">
@@ -105,7 +110,7 @@ export default function Footer() {
                 <li key={i}>
                   <Link
                     href={link.href}
-                    className="text-sm text-slate-400 hover:text-white 
+                    className="text-sm text-slate-600 hover:text-slate-900 
                                transition-colors duration-300 
                                inline-flex items-center gap-1 group"
                   >
@@ -124,7 +129,7 @@ export default function Footer() {
 
           {/* Column 3: Company */}
           <div>
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4">
+            <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">
               Company
             </h4>
             <ul className="space-y-3">
@@ -132,7 +137,7 @@ export default function Footer() {
                 <li key={i}>
                   <Link
                     href={link.href}
-                    className="text-sm text-slate-400 hover:text-white 
+                    className="text-sm text-slate-600 hover:text-slate-900 
                                transition-colors duration-300 
                                inline-flex items-center gap-1 group"
                   >
@@ -148,27 +153,28 @@ export default function Footer() {
               ))}
             </ul>
           </div>
- 
+
+          {/* Column 4: Get in Touch */}
           <div>
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4">
+            <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">
               Get in Touch
             </h4>
             <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:hello@lavixtech.com"
-                  className="text-sm text-slate-400 hover:text-white 
+                  href="mailto:lavixtech@gmail.com"
+                  className="text-sm text-slate-600 hover:text-slate-900 
                              transition-colors duration-300 
                              flex items-center gap-2"
                 >
                   <Mail size={14} className="text-indigo-400 flex-shrink-0" />
-                   lavixtech1@gmail.com
+                  lavixtech@gmail.com
                 </a>
               </li>
               <li>
                 <a
                   href="tel:+918787054829"
-                  className="text-sm text-slate-400 hover:text-white 
+                  className="text-sm text-slate-600 hover:text-slate-900 
                              transition-colors duration-300 
                              flex items-center gap-2"
                 >
@@ -177,9 +183,9 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <div className="text-sm text-slate-400 flex items-start gap-2">
+                <div className="text-sm text-slate-600 flex items-start gap-2">
                   <MapPin size={14} className="text-indigo-400 mt-0.5 flex-shrink-0" />
-                  <span>Delhi India</span>
+                  <span>Delhi, India</span>
                 </div>
               </li>
             </ul>
@@ -187,9 +193,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row 
+        <div className="pt-8 border-t border-slate-200 flex flex-col md:flex-row 
                         items-center justify-between gap-4">
-          
+
           {/* Copyright */}
           <p className="text-xs text-slate-500 flex items-center gap-1">
             © {new Date().getFullYear()} LavixTech. All rights reserved. Made with

@@ -28,7 +28,6 @@ export default function ContactPage() {
 
   const [submitted, setSubmitted] = useState(false);
 
- 
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://assets.calendly.com/assets/external/widget.js";
@@ -322,7 +321,7 @@ export default function ContactPage() {
 
               <div className="space-y-5">
                 <a
-                  href="mailto:hello@lavixtech.com"
+                  href="mailto:lavixtech@gmail.com"
                   className="flex items-start gap-4 group"
                 >
                   <div className="w-11 h-11 rounded-xl bg-indigo-500/10 
@@ -336,13 +335,13 @@ export default function ContactPage() {
                     </p>
                     <p className="text-sm font-medium text-white 
                                   group-hover:text-indigo-400 transition-colors">
-                      hello@lavixtech.com
+                      lavixtech@gmail.com
                     </p>
                   </div>
                 </a>
 
                 <a
-                  href="tel:+919999999999"
+                  href="tel:+918787054829"
                   className="flex items-start gap-4 group"
                 >
                   <div className="w-11 h-11 rounded-xl bg-purple-500/10 
@@ -356,7 +355,7 @@ export default function ContactPage() {
                     </p>
                     <p className="text-sm font-medium text-white 
                                   group-hover:text-purple-400 transition-colors">
-                      +91 99999 99999
+                      +91 8787054829
                     </p>
                   </div>
                 </a>
@@ -371,7 +370,7 @@ export default function ContactPage() {
                       Location
                     </p>
                     <p className="text-sm font-medium text-white">
-                      Mumbai, India
+                      Delhi, India
                     </p>
                   </div>
                 </div>
@@ -522,7 +521,7 @@ export default function ContactPage() {
                           text-sm text-slate-300">
             <div className="flex items-center gap-2">
               <MapPin size={16} className="text-indigo-400" />
-              Mumbai, Maharashtra, India
+              Delhi, India
             </div>
             <div className="flex items-center gap-2">
               <Clock size={16} className="text-purple-400" />
