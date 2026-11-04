@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu } from "lucide-react";
+import { Menu, Search, Command, Sparkles } from "lucide-react";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -18,57 +19,88 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-xl border-b border-slate-200 py-4 z-50">
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      {/* ============ FLOATING ISLAND NAVBAR ============ */}
+      <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-5xl z-50">
+        <div className="bg-white/80 backdrop-blur-xl border border-slate-200/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-full px-3 py-2 flex items-center justify-between transition-all duration-300">
           
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-lg transition-transform duration-300 group-hover:scale-110" />
-            <span className="text-xl font-bold text-slate-900 transition-colors duration-300 group-hover:text-purple-600">
+          <Link href="/" className="flex items-center gap-2 group pl-2">
+            <div className="relative w-8 h-8 flex-shrink-0">
+              <Image
+                src="/logo20.png"
+                alt="LavixTech Logo"
+                fill
+                className="object-contain transition-transform duration-300 group-hover:scale-110"
+              />
+            </div>
+            <span className="text-lg font-bold text-slate-900 hidden sm:block transition-colors duration-300 group-hover:text-indigo-600">
               Lavix<span className="gradient-text">Tech</span>
             </span>
           </Link>
 
-          {/* Desktop Links */}
-          <ul className="hidden md:flex items-center gap-8">
+          {/* Desktop Links (Pill Hover Effect) */}
+          <ul className="hidden md:flex items-center gap-1 bg-slate-50/50 p-1 rounded-full border border-slate-100">
             {navLinks.map((link) => (
               <li key={link.name}>
                 <Link
                   href={link.href}
-                  className="relative text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors duration-300 py-2 group inline-block"
+                  className="px-4 py-1.5 rounded-full text-sm font-medium text-slate-600 
+                             hover:text-slate-900 hover:bg-white hover:shadow-sm 
+                             transition-all duration-300 inline-block"
                 >
                   {link.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-indigo-500 to-purple-500 group-hover:w-full transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] rounded-full" />
                 </Link>
               </li>
             ))}
           </ul>
 
-          {/* Right Side: CTA + Hamburger */}
-          <div className="flex items-center gap-3">
+          {/* Right Side: Free Audit + Search + CTA + Hamburger */}
+          <div className="flex items-center gap-2 pr-1">
             
+            {/* 👇 Free Audit Button (NEW) */}
+            <Link
+              href="/free-audit"
+              className="hidden lg:flex items-center gap-1.5 px-3 py-1.5 rounded-full 
+                         bg-indigo-50 border border-indigo-100 
+                         text-indigo-700 hover:bg-indigo-100 
+                         transition-colors text-xs font-semibold"
+            >
+              <Sparkles size={14} className="text-indigo-500" />
+              Free Audit
+            </Link>
+
+            {/* Command K Search Hint */}
+            <button className="hidden xl:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-500 hover:text-slate-900 hover:bg-slate-200 transition-colors text-xs font-medium">
+              <Search size={14} />
+              <span className="text-slate-400">Search</span>
+              <kbd className="flex items-center gap-0.5 bg-white px-1.5 py-0.5 rounded text-[10px] border border-slate-200 font-mono">
+                <Command size={10} /> K
+              </kbd>
+            </button>
+
             {/* Contact Us Button */}
             <Link
               href="/contact"
-              className="relative px-4 md:px-5 py-2 rounded-full text-xs md:text-sm font-semibold text-white overflow-hidden group bg-gradient-to-r from-indigo-600 to-purple-600 shadow-lg shadow-indigo-500/30 hover:shadow-xl hover:shadow-purple-500/50 transition-all duration-300 hover:-translate-y-0.5"
+              className="relative px-4 py-2 rounded-full text-xs md:text-sm font-semibold text-white 
+                         overflow-hidden group bg-slate-900 hover:bg-slate-800 
+                         shadow-md hover:shadow-lg transition-all duration-300"
             >
               <span className="relative z-10">Contact Us</span>
-              <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/30 to-transparent" />
             </Link>
 
-            {/* Hamburger */}
+            {/* Mobile Hamburger */}
             <button
               onClick={() => setMobileOpen(true)}
-              className="md:hidden p-2 text-slate-700 hover:bg-slate-100 rounded-lg transition-colors"
+              className="md:hidden p-2 text-slate-700 hover:bg-slate-100 rounded-full transition-colors"
               aria-label="Open menu"
             >
-              <Menu size={24} />
+              <Menu size={20} />
             </button>
           </div>
         </div>
       </nav>
 
-      {/* Mobile Menu */}
+      {/* ============ MOBILE MENU ============ */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -79,25 +111,26 @@ export default function Navbar() {
             className="fixed inset-0 z-[100] bg-white md:hidden overflow-y-auto"
           >
             {/* Header */}
-            <div className="flex justify-between items-center p-6 border-b border-slate-200">
-              <span className="text-xl font-bold text-slate-900">
-                Lavix<span className="gradient-text">Tech</span>
-              </span>
+            <div className="flex justify-between items-center p-6 border-b border-slate-100">
+              <div className="flex items-center gap-2">
+                <div className="relative w-8 h-8">
+                  <Image
+                    src="/logo20.png"
+                    alt="LavixTech Logo"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <span className="text-xl font-bold text-slate-900">
+                  Lavix<span className="gradient-text">Tech</span>
+                </span>
+              </div>
               <button
                 onClick={() => setMobileOpen(false)}
-                className="p-2 text-slate-700 hover:bg-slate-100 rounded-lg transition-colors"
+                className="p-2 text-slate-700 hover:bg-slate-100 rounded-full transition-colors"
                 aria-label="Close menu"
               >
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="18" y1="6" x2="6" y2="18" />
                   <line x1="6" y1="6" x2="18" y2="18" />
                 </svg>
@@ -116,23 +149,41 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className="block py-4 text-lg font-medium text-slate-800 border-b border-slate-200 hover:text-purple-600 transition-colors"
+                    className="block py-4 px-4 rounded-2xl text-lg font-medium text-slate-800 hover:bg-slate-50 hover:text-indigo-600 transition-colors"
                   >
                     {link.name}
                   </Link>
                 </motion.div>
               ))}
 
+              {/* 👇 Free Audit Mobile Link (NEW) */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.25, duration: 0.3 }}
+              >
+                <Link
+                  href="/free-audit"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-2 py-4 px-4 rounded-2xl text-lg font-medium 
+                             text-indigo-600 bg-indigo-50/50 hover:bg-indigo-50 transition-colors"
+                >
+                  <Sparkles size={20} />
+                  Free Website Audit
+                </Link>
+              </motion.div>
+
               {/* CTA Button */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.3 }}
+                className="pt-4"
               >
                 <Link
                   href="/contact"
                   onClick={() => setMobileOpen(false)}
-                  className="block mt-6 py-3.5 text-center rounded-full text-white font-semibold bg-gradient-to-r from-indigo-600 to-purple-600 shadow-lg shadow-indigo-500/30"
+                  className="block py-4 text-center rounded-full text-white font-semibold bg-slate-900 shadow-lg"
                 >
                   Contact Us
                 </Link>
@@ -143,18 +194,12 @@ export default function Navbar() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.3 }}
-                className="mt-8 pt-6 border-t border-slate-200 space-y-3"
+                className="mt-8 pt-6 border-t border-slate-100 space-y-3"
               >
-                <a
-                  href="mailto:ankitpandey.ap8787@gmail.com"
-                  className="block text-sm text-slate-600 hover:text-slate-900 transition-colors break-all"
-                >
-                  📧 ankitpandey.ap8787@gmail.com
+                <a href="mailto:lavixtech@gmail.com" className="block text-sm text-slate-500 hover:text-slate-900">
+                  📧 lavixtech@gmail.com
                 </a>
-                <a
-                  href="tel:+918787054829"
-                  className="block text-sm text-slate-600 hover:text-slate-900 transition-colors"
-                >
+                <a href="tel:+918787054829" className="block text-sm text-slate-500 hover:text-slate-900">
                   📞 +91 8787054829
                 </a>
               </motion.div>
