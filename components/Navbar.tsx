@@ -25,9 +25,9 @@ export default function Navbar() {
           
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group pl-2">
-            <div className="relative w-8 h-8 flex-shrink-0">
+            <div className="relative w-10 h-10 flex-shrink-0">
               <Image
-                src="/logo20.png"
+                src="/logo20-cropped.png"
                 alt="LavixTech Logo"
                 fill
                 className="object-contain transition-transform duration-300 group-hover:scale-110"
@@ -113,9 +113,9 @@ export default function Navbar() {
             {/* Header */}
             <div className="flex justify-between items-center p-6 border-b border-slate-100">
               <div className="flex items-center gap-2">
-                <div className="relative w-8 h-8">
+                <div className="relative w-10 h-10">
                   <Image
-                    src="/logo20.png"
+                    src="/logo20-cropped.png"
                     alt="LavixTech Logo"
                     fill
                     className="object-contain"

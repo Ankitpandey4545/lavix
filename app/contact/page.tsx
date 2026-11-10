@@ -476,7 +476,7 @@ export default function ContactPage() {
                   { icon: FaLinkedin, href: "#", bg: "hover:bg-[#0A66C2]" },
                   { icon: FaTwitter, href: "#", bg: "hover:bg-[#1DA1F2]" },
                   { icon: FaGithub, href: "#", bg: "hover:bg-[#333]" },
-                  { icon: FaInstagram, href: "#", bg: "hover:bg-gradient-to-br hover:from-[#833AB4] hover:via-[#FD1D1D] hover:to-[#FCB045]" },
+                  { icon: FaInstagram, href: "https://www.instagram.com/lavix.tech/", bg: "hover:bg-gradient-to-br hover:from-[#833AB4] hover:via-[#FD1D1D] hover:to-[#FCB045]" },
                 ].map((social, i) => {
                   const Icon = social.icon;
                   return (

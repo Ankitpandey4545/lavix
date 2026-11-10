@@ -50,7 +50,7 @@ const socialLinks = [
   { icon: FaGithub, href: "https://github.com", label: "Github", color: "hover:bg-[#333]" },
   {
     icon: FaInstagram,
-    href: "https://www.instagram.com/lavixtech.in/?hl=en",
+    href: "https://www.instagram.com/lavix.tech/",
     label: "Instagram",
     color: "hover:bg-gradient-to-br hover:from-[#833AB4] hover:via-[#FD1D1D] hover:to-[#FCB045]",
   },
@@ -174,9 +174,9 @@ export default function Footer() {
             <div className="lg:col-span-2">
               
               <Link href="/" className="flex items-center gap-2 mb-5 group">
-                <div className="relative w-10 h-10 flex-shrink-0">
+                <div className="relative w-12 h-12 flex-shrink-0">
                   <Image
-                    src="/logo20.png"
+                    src="/logo20-cropped.png"
                     alt="LavixTech Logo"
                     fill
                     className="object-contain transition-transform duration-300 group-hover:scale-110"
